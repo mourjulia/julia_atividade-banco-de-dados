@@ -40,3 +40,27 @@ SELECT
 FROM aluno
 JOIN curso ON aluno.curso_id = curso.id
 ```
+
+## 7- Faça uma consulta que mostre o nome dos professores e o título do curso que lecionam. Classifique pelo nome do professor.
+
+```sql
+SELECT 
+    professor.nomedoprofessor AS Nome_Professor, 
+    curso.nomedocurso AS Curso
+FROM professor JOIN curso ON professor.curso_id = curso.id 
+```
+
+## 8- Faça uma consulta que mostre o nome dos alunos, o título dos cursos que fazem, e o professor de cada curso.
+
+```sql
+SELECT 
+    aluno.nomedoaluno AS Nome_Aluno, 
+    curso.nomedocurso AS Curso, 
+    professor.nomedoprofessor AS Professor
+FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
+JOIN professor ON curso.professor_id = professor.id
+```
+
+## 9-  Faça uma consulta que mostre a quantidade de alunos que cada curso possui. Classifique os resultados em ordem descrecente de acordo com a quantidade de alunos.
+
+``````
