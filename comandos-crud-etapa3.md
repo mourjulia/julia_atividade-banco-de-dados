@@ -36,6 +36,19 @@ CREATE TABLE aluno (
 );
 ```
 
+#### Definindo chaves estrangeiras
+```sql
+-- faznedo ligação de curso para professor
+ALTER TABLE curso 
+ADD CONSTRAINT fk_curso_professor 
+FOREIGN KEY (professor_id) REFERENCES professor(id);
+
+-- fazendo ligação de aluno ao curso
+ALTER TABLE aluno 
+ADD CONSTRAINT fk_aluno_curso 
+FOREIGN KEY (curso_id) REFERENCES curso(id);
+```
+
 #### Adicionando os cursos e a cargahoraria
 ```sql
 INSERT INTO curso (nomedocurso, cargahoraria) VALUES
@@ -166,15 +179,5 @@ INSERT INTO aluno (nomedoaluno, datadenascimento, primeiranota, segundanota,curs
 );
 ```
 
-```sql
--- faznedo ligação de curso para professor
-ALTER TABLE curso 
-ADD CONSTRAINT fk_curso_professor 
-FOREIGN KEY (professor_id) REFERENCES professor(id);
 
--- fazendo ligação de aluno ao curso
-ALTER TABLE aluno 
-ADD CONSTRAINT fk_aluno_curso 
-FOREIGN KEY (curso_id) REFERENCES curso(id);
-```
 
