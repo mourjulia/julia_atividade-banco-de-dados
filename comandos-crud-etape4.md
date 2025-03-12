@@ -33,7 +33,10 @@ SELECT nomedoprofessor FROM professor WHERE areadeatuacao = 'Desenvolvimento'
 ## 5- Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
 
 ```sql
-
+SELECT areadeatuacao AS 'Área de atuação',
+COUNT(id) AS "Quantidade de Professores"
+FROM professor
+GROUP BY areadeatuacao;
 ```
 
 ## 6- Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
@@ -81,7 +84,14 @@ ORDER BY Quantidadedealunos DESC;
 ## 10- Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
 
 ```sql
-
+SELECT 
+    aluno.nomedoaluno AS Nome_Aluno, 
+    aluno.primeiranota AS Nota_1, 
+    aluno.segundanota AS Nota_2, 
+    (aluno.primeiranota + aluno.segundanota) / 2 AS Media, 
+    curso.nomedocurso AS Curso
+FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
+WHERE curso.nomedocurso IN ('Front-End', 'Back-End')
 ```
 
 ## 11- Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
