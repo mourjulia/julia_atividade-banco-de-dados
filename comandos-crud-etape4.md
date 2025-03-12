@@ -10,7 +10,7 @@ WHERE datadenascimento < '2009-01-01';
 ## 2- Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
 
 ```sql
-SELECT nomedoaluno, ROUND((primeiranota + segundanota) / 2, 2) AS "Média das notas" FROM aluno;
+SELECT nomedoaluno, ROUND((primeiranota + segundanota) * 0.50) AS "Média das notas" FROM aluno;
 ```
 
 ## 3- Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
@@ -88,7 +88,7 @@ SELECT
     aluno.nomedoaluno AS Nome_Aluno, 
     aluno.primeiranota AS Nota_1, 
     aluno.segundanota AS Nota_2, 
-    (aluno.primeiranota + aluno.segundanota) / 2 AS Media, 
+    (aluno.primeiranota + aluno.segundanota) * 0.50 AS Media, 
     curso.nomedocurso AS Curso
 FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
 WHERE curso.nomedocurso IN ('Front-End', 'Back-End')
@@ -111,5 +111,8 @@ DELETE FROM aluno WHERE curso_id = 3 LIMIT 1;
 ## 13- Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
 
 ```sql
-
+SELECT 
+aluno.nomedoaluno AS 'Nome do Aluno',
+curso.nomedocurso AS 'Nome do Curso'
+FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
 ```
