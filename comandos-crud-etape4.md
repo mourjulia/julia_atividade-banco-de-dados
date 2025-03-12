@@ -29,11 +29,12 @@ ORDER BY nomedocurso ASC;
 ```sql
 SELECT nomedoprofessor FROM professor WHERE areadeatuacao = 'Desenvolvimento'
 ```
- ## 5- Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
 
- ```sql
- 
- ```
+## 5- Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
+
+```sql
+
+```
 
 ## 6- Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
 
@@ -76,6 +77,7 @@ JOIN professor ON curso.professor_id = professor.id
 
 ```sql
 
+ORDER BY nomedocurso ASC;
 ```
 
 ## 11- Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
@@ -88,7 +90,8 @@ UPDATE curso SET cargahoraria = '15' WHERE id = 4
 ## 12- Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
 
 ```sql
-
+DELETE FROM aluno WHERE curso_id = 5 LIMIT 1;
+DELETE FROM aluno WHERE curso_id = 3 LIMIT 1;
 ```
 
 ## 13- Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
