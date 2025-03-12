@@ -70,14 +70,18 @@ JOIN professor ON curso.professor_id = professor.id
 ## 9-  Faça uma consulta que mostre a quantidade de alunos que cada curso possui. Classifique os resultados em ordem descrecente de acordo com a quantidade de alunos.
 
 ```sql
-
+SELECT 
+    curso.nomedocurso AS Curso, 
+    COUNT(aluno.id) AS Quantidadedealunos
+FROM curso INNER JOIN aluno ON curso.id = aluno.curso_id
+GROUP BY curso.nomedocurso
+ORDER BY Quantidadedealunos DESC;
 ```
 
 ## 10- Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
 
 ```sql
 
-ORDER BY nomedocurso ASC;
 ```
 
 ## 11- Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
