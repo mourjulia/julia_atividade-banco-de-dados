@@ -16,7 +16,12 @@ SELECT nomedoaluno, ROUND((primeiranota + segundanota) / 2, 2) AS "Média das no
 ## 3- Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
 
 ```sql
-
+SELECT 
+    nomedocurso AS Curso, 
+    cargahoraria AS Carga_Horaria, 
+    (cargahoraria * 0.25) AS Limite_Faltas
+FROM curso
+ORDER BY nomedocurso ASC;
 ```
 
 ## 4- Faça uma consulta que mostre os nomes dos professores que são somente da área "desenvolvimento".
