@@ -123,4 +123,10 @@ FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
 
 # DESAFIOS EXTRAS
 
-## 1-Criar uma consulta que calcule a idade do aluno
+## 1- Criar uma consulta que calcule a idade do aluno
+
+## 2- Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média maior ou igual a 7.
+
+## 3- Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média menor que 7.
+
+## 4- Criar uma consulta que mostre a quantidade de alunos com média maior ou igual a 7.
