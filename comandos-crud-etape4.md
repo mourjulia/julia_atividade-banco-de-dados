@@ -24,4 +24,19 @@ WHERE datadenascimento < '2009-01-01';
 ```sql
 SELECT nomedoprofessor FROM professor WHERE areadeatuacao = 'Desenvolvimento'
 ```
+ ## 5- Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
 
+ ```sql
+ 
+ ```
+
+## 6- Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
+
+```sql
+SELECT 
+    aluno.nomedoaluno AS Nome_Aluno, 
+    curso.nomedocurso AS Curso, 
+    curso.cargahoraria AS Carga_Horaria
+FROM aluno
+JOIN curso ON aluno.curso_id = curso.id
+```
