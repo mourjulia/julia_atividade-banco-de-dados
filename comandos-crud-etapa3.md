@@ -165,3 +165,16 @@ INSERT INTO aluno (nomedoaluno, datadenascimento, primeiranota, segundanota,curs
     4
 );
 ```
+
+```sql
+-- faznedo ligação de curso para professor
+ALTER TABLE curso 
+ADD CONSTRAINT fk_curso_professor 
+FOREIGN KEY (professor_id) REFERENCES professor(id);
+
+-- fazendo ligação de aluno ao curso
+ALTER TABLE aluno 
+ADD CONSTRAINT fk_aluno_curso 
+FOREIGN KEY (curso_id) REFERENCES curso(id);
+```
+
