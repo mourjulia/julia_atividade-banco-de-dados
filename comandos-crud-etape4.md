@@ -104,8 +104,12 @@ UPDATE curso SET cargahoraria = '15' WHERE id = 4
 ## 12- Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
 
 ```sql
-DELETE FROM aluno WHERE curso_id = 5 LIMIT 1;
-DELETE FROM aluno WHERE curso_id = 3 LIMIT 1;
+DELETE FROM aluno
+WHERE curso_id IN (
+    (SELECT id FROM curso WHERE nomedocurso = 'Redes de Computadores'),
+    (SELECT id FROM curso WHERE nomedocurso = 'UX/UI Design')
+)
+LIMIT 2;
 ```
 
 ## 13- Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
@@ -116,3 +120,7 @@ aluno.nomedoaluno AS 'Nome do Aluno',
 curso.nomedocurso AS 'Nome do Curso'
 FROM aluno INNER JOIN curso ON aluno.curso_id = curso.id
 ```
+
+# DESAFIOS EXTRAS
+
+## 1-Criar uma consulta que calcule a idade do aluno
